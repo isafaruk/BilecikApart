@@ -1,0 +1,42 @@
+﻿@model tasarım1.Models.User
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<div class="d-flex justify-content-center">
+    <form method="post" asp-controller="User" asp-action="Index">
+        <div class="mb-3">
+            <input type="text" required class="form-control align-self-center" id="ad" placeholder="Adınız" name="ad" aria-describedby="emailHelp" style="width:700px">
+        </div>
+        <div class="mb-3">
+            <input type="text" required class="form-control align-self-center" id="soyad" placeholder="Soyadınız" name="soyad">
+        </div>
+        <div class="mb-3">
+            <input type="text" required class="form-control align-self-center" id="kullaniciadi" placeholder="Kullanıcı Adınız" name="kullaniciadi">
+        </div>
+        <div class="mb-3">
+            <input type="text" required class="form-control align-self-center" id="telefon" placeholder="Telefon" name="telefon">
+        </div>
+        <div class="mb-3">
+            <input type="text" required class="form-control align-self-center" id="eposta" placeholder="E-posta" name="eposta">
+        </div>
+        <div class="mb-3">
+            <input type="password" required class="form-control align-self-center" id="passw" placeholder="Parolanız" name="passw">
+        </div>
+        <div class="mb-3">
+            <input type="password" required class="form-control align-self-center" id="authpassw" placeholder="Parolanızı Doğrulayın" name="authpassw">
+        </div>
+        <hr />
+        <div class="d-flex justify-content-center">
+            @ViewBag.MailError
+            @ViewBag.NameError
+            @ViewBag.MailNameError
+            @ViewBag.AnotherError
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" style="width:150px" class="btn btn-primary d-flex justify-content-center">Tamamla</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<tasarım1.Models.Apartlar>
+
+@{
+    ViewBag.Title = "Index";
+    string aciklama;
+}
+
+<div class="bg-dark py-5 ">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <form action="/Home/Search" enctype="multipart/form-data">
+                <div class="input-group d-flex justify-content-center">
+                    <input type="search" id="yazi" name="yazi" class="form-control rounded" placeholder="Aramak İstediğiniz Kelimeyi Giriniz..." aria-label="Search"
+                           aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-success col-xs-4" style="width: 134px;">Giriş</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="text-center">Beğenilenler</h2>
+        <hr />
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model.Take(8))
+            {
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="~/Images/@item.fotograf.anafoto" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">@item.ad</h5>
+                                @{
+                                    aciklama = item.aciklama;
+                                    aciklama = aciklama.Length > 15 ? aciklama.Substring(0, 15) : aciklama;
+                                }
+                                @aciklama
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Home/Details/@item.id">Detaylar</a></div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+

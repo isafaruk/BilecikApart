@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Verification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br>
+<h2>Hesap Onaylama</h2> <hr/>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Onay Kodu</h4>
+            </div>
+            <form method="post" action="/User/Verification">
+                <div class="modal-body">
+                    <div class="form-group">
+                        Onay Kodu
+                        <input type="text" name="verificationCode" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Onayla</button>
+                </div>
+            </form>
+        </div>
+    </div>
+

@@ -1,0 +1,173 @@
+﻿@model tasarım1.Models.Apartlar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br>
+<h2>Detaylar</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aciklama)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <h4>Fotograflar</h4>
+    <hr />
+    @Html.Partial("FotografPartial")
+
+</div>
+<br>
+<div>
+    <h4>Bina Özellikleri</h4>
+    <hr />
+    <div>
+        <div class="row">
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.binaOzellik.utuOdasi)&emsp;
+                @Html.DisplayFor(model => model.binaOzellik.utuOdasi)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.binaOzellik.asansor) &emsp;&emsp;
+                @Html.DisplayFor(model => model.binaOzellik.asansor)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.binaOzellik.sporSalonu) &emsp;&emsp;
+                @Html.DisplayFor(model => model.binaOzellik.sporSalonu)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.binaOzellik.etutSalonu) &emsp;&emsp;
+                @Html.DisplayFor(model => model.binaOzellik.etutSalonu)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.binaOzellik.kafeterya) &emsp;&emsp;
+                @Html.DisplayFor(model => model.binaOzellik.kafeterya)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.binaOzellik.oyunOdasi) &emsp;&emsp;
+                @Html.DisplayFor(model => model.binaOzellik.oyunOdasi)
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>
+<div>
+    <h4>Oda Özellikleri</h4>
+    <hr />
+
+    <div>
+        <div class="row">
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.odaOzellik.wifi)&emsp;
+                @Html.DisplayFor(model => model.odaOzellik.wifi)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.odaOzellik.balkonluOda) &emsp;&emsp;
+                @Html.DisplayFor(model => model.odaOzellik.balkonluOda)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.odaOzellik.calismaMasasi) &emsp;&emsp;
+                @Html.DisplayFor(model => model.odaOzellik.calismaMasasi)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                @Html.DisplayNameFor(model => model.odaOzellik.tv) &emsp;&emsp;
+                @Html.DisplayFor(model => model.odaOzellik.tv)
+            </div>
+            <div class="col-sm-4">
+                @Html.DisplayNameFor(model => model.odaOzellik.miniBuzdolabi) &emsp;&emsp;
+                @Html.DisplayFor(model => model.odaOzellik.miniBuzdolabi)
+            </div>
+            
+        </div>
+    </div>
+</div>
+<br>
+<div>
+    <h4>Hizmetler</h4>
+    <hr />
+    <div>
+        <div class="row">
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.hizmetler.guvenlik)&emsp;
+                @Html.DisplayFor(model => model.hizmetler.guvenlik)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.hizmetler.temizlik) &emsp;&emsp;
+                @Html.DisplayFor(model => model.hizmetler.temizlik)
+            </div>
+            <div class="col-sm">
+                @Html.DisplayNameFor(model => model.hizmetler.mutfak) &emsp;&emsp;
+                @Html.DisplayFor(model => model.hizmetler.mutfak)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                @Html.DisplayNameFor(model => model.hizmetler.kameraSistemi) &emsp;&emsp;
+                @Html.DisplayFor(model => model.hizmetler.kameraSistemi)
+            </div>
+            <div class="col-sm-4">
+                @Html.DisplayNameFor(model => model.hizmetler.yemek) &emsp;&emsp;
+                @Html.DisplayFor(model => model.hizmetler.yemek)
+            </div>
+
+        </div>
+    </div>
+</div>
+<br>
+<p>
+    @Html.ActionLink("Listeye Dön", "Apart", "Home")
+
+</p>

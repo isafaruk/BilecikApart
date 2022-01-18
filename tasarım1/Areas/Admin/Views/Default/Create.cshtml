@@ -1,0 +1,122 @@
+﻿@model tasarım1.Models.Apartlar
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout2.cshtml";
+}
+<br>
+<h2>Apart Oluşturma</h2>
+
+<div class="d-flex ">
+    @using (Html.BeginForm("Create", "Default", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-2" for="ad">Ad</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="ad" name="ad" type="text" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="telefon">Telefon</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="telefon" name="telefon" type="text" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="adres">Adres</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="adres" name="adres" type="text" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="eposta">E-posta</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="eposta" name="eposta" type="text" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="website">Website</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="website" name="website" type="text" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="aciklama">Açıklama</label>
+                <div class="col-md-10">
+                    <textarea class="form-control text-box" id="aciklama" name="aciklama" rows="3" type="text" required></textarea>
+                </div>
+            </div>
+            <hr />
+
+            <label class="control-label col-md-4">Fotoğraflar (Birden Fazla Ekleyiniz.)</label>
+            <div class="col-md-10">
+                <input type="file" name="file" multiple />
+            </div>
+
+
+
+            <hr />
+
+            @Html.LabelFor(model => model.binaOzellik.asansor, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.binaOzellik.asansor, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.binaOzellik.utuOdasi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.binaOzellik.utuOdasi, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.binaOzellik.sporSalonu, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.binaOzellik.sporSalonu, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.binaOzellik.etutSalonu, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.binaOzellik.etutSalonu, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.binaOzellik.kafeterya, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.binaOzellik.kafeterya, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.binaOzellik.oyunOdasi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.binaOzellik.oyunOdasi, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            <hr />
+            @Html.LabelFor(model => model.odaOzellik.wifi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.odaOzellik.wifi, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.odaOzellik.balkonluOda, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.odaOzellik.balkonluOda, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.odaOzellik.calismaMasasi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.odaOzellik.calismaMasasi, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.odaOzellik.tv, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.odaOzellik.tv, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.odaOzellik.miniBuzdolabi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.odaOzellik.miniBuzdolabi, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.odaOzellik.kisiselDolap, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.odaOzellik.kisiselDolap, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.odaOzellik.dusWc, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.odaOzellik.dusWc, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            <hr />
+            @Html.LabelFor(model => model.hizmetler.guvenlik, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.hizmetler.guvenlik, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.hizmetler.temizlik, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.hizmetler.temizlik, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.hizmetler.mutfak, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.hizmetler.mutfak, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.hizmetler.kameraSistemi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.hizmetler.kameraSistemi, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            @Html.LabelFor(model => model.hizmetler.yemek, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.hizmetler.yemek, new { htmlAttributes = new { @class = "form-control" } }) &emsp;
+            <hr/>
+            <br>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Oluştur" class="btn btn-primary" />
+                </div>
+                
+            </div>
+        </div>
+    }
+</div>
+<br>
+<div class="col-md-offset-2 col-md-10">
+    @Html.ActionLink("Listeye Dön", "Apart")
+</div>
+<br />
+

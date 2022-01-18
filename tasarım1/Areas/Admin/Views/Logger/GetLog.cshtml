@@ -1,0 +1,49 @@
+﻿@model IEnumerable<tasarım1.Areas.Admin.Models.Logger>
+
+@{
+    ViewBag.Title = "GetLog";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout2.cshtml";
+}
+<br/>
+<h2>GetLog</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoggerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoggerAction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoggerDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoggerIP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoggerBrowser)
+        </th>
+    </tr>
+
+@foreach (var item in Model.Take(15)) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoggerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoggerAction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoggerDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoggerIP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoggerBrowser)
+        </td>
+    </tr>
+}
+
+</table>
